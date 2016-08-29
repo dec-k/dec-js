@@ -17,8 +17,9 @@ var current;
 var previous;
 
 function draw() {
-    document.getElementById('defaultCanvas0').style.pointerEvents = "none";
+  document.getElementById('defaultCanvas0').style.pointerEvents = "none";
   noFill();
+  clear();
 
   // If it's time for a new point
   if (millis() > next && painting) {
@@ -56,6 +57,7 @@ function mousePressed() {
   previous.x = mouseX;
   previous.y = mouseY;
   paths.push(new Path());
+
 }
 
 // Stop
