@@ -1,4 +1,24 @@
-#header-logo{
-  height:100px;
-  width:100px;
+#canvas-override{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vh;
+  height:100vh;
+}
+
+canvas{
+  position:fixed;
+  z-index: 0;
+}
+
+#head-block{
+  padding:20px;
+  background: black;
+  color: white;
+}
+
+h1{
+  padding:20px;
+  background: black;
+  color: white;
 }
