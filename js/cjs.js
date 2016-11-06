@@ -18,8 +18,6 @@ function draw() {
   rotateY(map(mouseX, 0, width, 0, PI));
 	rotateX(map(mouseY, 0, height, 0, PI));
   box(200);
-
-
 }
 
 function mousePressed(){
