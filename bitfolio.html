@@ -57,12 +57,18 @@
         <p>
           <b>Best-Match-Bind finding</b><br>
           <b><a href="https://github.com/OtagoPolytechnic/SoundSwitch/blob/master/sound-switch/sound-switch/BindingManager.cs">Full Class Code Here</a></b><br>
-          I feel this bit of code is quite interesting due to the surrounding architecture that facilitates it.
-          Each cycle over the for loop, we call an instance of a class I wrote called <b>executor</b> which
-          handles running seperate processes (a lot of these are CMD processes) and sending in commands to it via a function call.
-          The <b>ExecuteCommand(string)</b> function returns the cmd output of whatever command it is passed. In this case, cmd is running an executable
-          that compares our two .wav files, and asseses how similar they are as a scalar value. We save that value, and eventually the entire method returns what it
-          determines as the most accurate match for a heard voice command.
+          This code is what drives the most crucial part of the code, the ability to actually match user sounds to bindings.
+          It's actual implementation was quite challenging for us, once we
+          began using <b>xcorr-sound</b> as our "sound file matching" library,
+          we had the issue of that library being solely compiled as cmd executables.
+          I did a lot of research into running cmd processes and returning information from that process
+          efficiently. Initially, I tried to run the CMD process in a multi-threaded way
+          but I discovered that this approach is quite overengineered for what we required.
+          I ended up rewriting this section to work so that each run over the for loop in the snippet
+          uses a custom class I wrote (executor) which handles all the process start-stopping, and
+          provides a method that allows a command to be passed to that process and returns the commands output.<br>
+          This code also went through a couple iterations, before the executor code was fully modularised,
+          the latency on finding bindings was unacceptably slow and it required revising to get to where it is now.
         </p>
       <pre><code>
           public Binding compareUnprocessed()
@@ -97,12 +103,15 @@
         <b>Existing Bind Loading</b><br>
         <b><a href="https://github.com/OtagoPolytechnic/SoundSwitch/blob/master/sound-switch/sound-switch/BindingManager.cs">Full Class Code Here</a></b><br>
         We had an interesting problem relating to the persistence of our
-        bindings. And I came up with an interesting solution. For a binding
-        to exist, it only needs an identifier as a name, and a command to execute
-        in addition to the sound file itself. So, why not store both the name
-        and the command as the name of the .wav file? When the program is started up,
-        it <b>searches the program directory for .wav files, and rebuilds the files it finds as
-        clean bindings if the filename matches our guidelines.</b>
+        bindings. In that we didn't have any. When I first wrote the system to manage
+        bindings, we lost all binding data between launches. I started looking for good options
+        that would afford us persistence between launches, but none seemed very practical
+        for the small file-size required by our sounds (I even considered trying to Serialise an audio file.)
+        So I looked at what data we had for our bindings, and realised I could store all
+        information about a given binding <b>in it's own file name.</b> What this lead to is the code you see below,
+        when the program is launched, it scans its local directory for .wav files that match our naming conventions,
+        then <b>breaks down the file name in order to retrieve the information it needs to recreate the bindings.</b>
+        Because we store so little info per-bind, this method has been very fast for us.
       </p>
       <pre><code>
         for (int i = 0; i < dirs.Length; i++)
