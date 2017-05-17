@@ -6,6 +6,10 @@
   height:100vh;
 }
 
+html {
+  overflow-y: visible;
+}
+
 canvas{
   position:fixed;
   z-index: 0;
@@ -22,4 +26,8 @@ h1{
   padding:20px;
   background: black;
   color: white;
+}
+
+#sub-block{
+  font-style: italic;
 }
