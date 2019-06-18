@@ -4,7 +4,6 @@ Attributes defined in here are globally applied to the entire project. Use with 
 
 body {
   margin: 0;
-  font-family: 'B612 Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,4 +14,4 @@ code {
 }
 
 /* Gfonts import */
-@import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');

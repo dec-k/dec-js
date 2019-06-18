@@ -2,14 +2,10 @@
     transform: rotate(90deg);
     transform-origin: 0 0;
     position:fixed;
-    top:0;
+    top:5%;
     left:20px;
 }
 
 .Sidebar a{
-    
-}
-
-.Sidebar a::after{
-    margin-right: 15px;
+    padding-right: 10px;
 }
