@@ -1,0 +1,12 @@
+.PrimaryHeader {
+    width: 50%;
+    margin: 0;
+    padding-top: 350px;
+    text-align: right;
+}
+
+.SecondaryHeader {
+    width: 50%;
+    margin: 0;
+    text-align: right;
+}
