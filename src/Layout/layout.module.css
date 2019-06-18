@@ -1,15 +1,5 @@
 .Container {
-    background: linear-gradient(
-      to right, 
-      #ffffff 0%, 
-      #ffffff 50%, 
-      #128cff 50%, 
-      #27da95 100%
-    );
 
-    position: fixed;
-    height:100%;
-    width: 100%;
   }
 
   @media (max-width: 500px){
