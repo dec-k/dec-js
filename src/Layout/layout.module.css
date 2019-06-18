@@ -1,9 +1,0 @@
-.Container {
-
-  }
-
-  @media (max-width: 500px){
-      .Container{
-          background: #FFFFFF;
-      }
-  }
