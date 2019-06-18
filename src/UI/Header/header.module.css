@@ -1,12 +1,32 @@
 .PrimaryHeader {
     width: 50%;
     margin: 0;
-    padding-top: 350px;
+
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+
     text-align: right;
 }
 
 .SecondaryHeader {
     width: 50%;
     margin: 0;
+    
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+
     text-align: right;
+}
+
+@media (max-width: 499px) {
+    .PrimaryHeader {
+        padding-top: 0px;
+        width: 100%;
+        text-align: left;
+    }
+    .SecondaryHeader {
+        display: none;
+    }
 }
