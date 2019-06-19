@@ -9,7 +9,7 @@ const layout = (props) => {
     return (
         <Aux>
             <Navbar />
-            <div style={{"height": "2000px"}}>fudge</div>
+            <div style={{"height": "2000px", "margin-top":"60px"}}>fudge</div>
         </Aux>
     );
 }
