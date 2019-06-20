@@ -11,7 +11,7 @@ const navbar = (props) => {
                 <Header />
                 <a href='/'>Home</a>
                 <a href='https://github.com/dec-k' target='_blank'>Github</a>
-                <a href='/'>Lootsim</a>
+                <a style={{"color" : "#fefefe"}}href='/'>Lootsim</a>
             </div>
         </Aux>
     );

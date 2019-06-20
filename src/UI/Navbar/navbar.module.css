@@ -20,3 +20,9 @@
     font-family: 'Volkhov', serif;
     font-size: 18px;
 }
+
+.NavBar a:hover{
+    transition: .3s ease-out;
+    transform: scale(1.1);
+    color: rgb(42, 167, 59);
+}
