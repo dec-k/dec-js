@@ -1,13 +1,19 @@
 import React from 'react';
+import Header from '../../UI/Header/header'
+import Aux from '../../hoc/Auxiliary/auxiliary'
 import classes from './navbar.module.css';
 
 const navbar = (props) => {
-    return(
-        <div className={classes.NavBar}>
-            <a href='/'>home</a>
-            <a href='/'>github</a>
-            <a href='/'>lootsim</a>
-        </div>
+    return (
+        <Aux>
+
+            <div className={classes.NavBar}>
+                <Header />
+                <a href='/'>Home</a>
+                <a href='https://github.com/dec-k' target='_blank'>Github</a>
+                <a href='/'>Lootsim</a>
+            </div>
+        </Aux>
     );
 }
 

@@ -1,0 +1,15 @@
+/*
+Primary Content Container, render things like content plates in here.
+*/
+
+.Container {
+    margin-top: 95px;
+    background-color: #d6d6d6;
+    height: calc(100vh - 95px);
+}
+
+@media(max-width:500px) {
+    .Container {
+        margin-top: 60px;
+    }
+}
