@@ -1,13 +1,10 @@
 import React from 'react';
-import Aux from '../../hoc/Auxiliary/auxiliary'
 import classes from './header.module.css'
+import headerIco from '../../assets/images/headerico.PNG'
 
 const header = (props) => {
     return (
-        <Aux>
-            <h1 className={classes.PrimaryHeader}>50/50 Layout Test</h1>
-            <h2 className={classes.SecondaryHeader}>Split via pure css</h2>
-        </Aux>
+        <img className={classes.Icon} src={headerIco} alt=""/>
     );
 }
 

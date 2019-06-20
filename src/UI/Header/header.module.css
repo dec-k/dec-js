@@ -1,10 +1,13 @@
-.PrimaryHeader {
-    font-family: 'Archivo Black', sans-serif;
-
-
+.Icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 132px 132px 132px 132px;
+    margin: 10px;
 }
 
-.SecondaryHeader {
-    font-family: 'Archivo Black', sans-serif;
-
+@media (max-width: 500px) {
+    .Icon {
+        width: 40px;
+        height: 40px;
+    }
 }
